@@ -27,14 +27,10 @@ void loop() {
 }
 
 void pinA() {
-  if (!digitalRead(PIN_B)) { // Check if pin A is leading
-    pos++; // increment position by 1
-  }
+  pos += !digitalRead(PIN_B); // Check if pin A is leading and increment position by 1
 }
 
 void pinB() {
-  if (!digitalRead(PIN_A)) { // Check if pin B is leading
-    pos--; // deduct position by 1
-  }
+  pos -= !digitalRead(PIN_A); // Check if pin B is leading and deduct position by 1
 }
 
